@@ -8,7 +8,7 @@ import 'dart:math';
 
 import 'package:dcli/dcli.dart';
 
-import 'git_clone.dart';
+import 'git_clone_command.dart';
 
 Repository _noFormat<Repository>(Repository option) => option;
 

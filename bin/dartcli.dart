@@ -1,8 +1,9 @@
 #! /usr/bin/env dcli
 
-import 'package:dartcli/git_clone.dart' as git;
+import 'package:args/command_runner.dart';
+import 'package:dartcli/git_clone_command.dart';
 
-void main(List<String> arguments) {
-  // n.runBrowser('https://google.com');
-  git.gitClone(arguments);
+Future<void> main(List<String> args) async {
+  final runner = CommandRunner('dgit', 'dcli git')..addCommand(CloneCommand());
+  await runner.run(args);
 }
