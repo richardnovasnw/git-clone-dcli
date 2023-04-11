@@ -1,11 +1,10 @@
 import 'dart:convert';
 
 import 'package:args/command_runner.dart';
+import 'package:dartcli/menu_select.dart';
 import 'package:dcli/dcli.dart' hide Shell, menu;
 import 'package:http/http.dart' as http;
 import 'package:process_run/shell.dart';
-
-import 'menu_select.dart';
 
 class CloneCommand extends Command {
   CloneCommand() {
@@ -111,11 +110,88 @@ class CloneCommand extends Command {
 
       // Git clone command
       var shell = Shell();
-      await shell.run('''
-     git clone ${selected.url} output/${selected.name}
-    ''');
+      // final File tempPath = File((await getTemporaryDirectory()).path);
 
+      if (!exists('tempPath')) {
+        createDir('tempPath');
+      } else {
+        deleteDir('tempPath');
+      }
+      await shell.run('''
+       git clone ${selected.url} tempPath/${selected.name}
+      ''');
       print('done, check output directory for result');
+      final basePath = 'tempPath/${selected.name}';
+      final outputPath = 'output/${selected.name}';
+
+      // cat('$basePath/lib/main.dart');
+
+      final androidPath = 'android';
+      final iosPath = 'ios';
+      final integrationTest = 'integration_test';
+      final pubspecYaml = 'pubspec.yaml';
+      final pubspecLock = 'pubspec.lock';
+      final readme = 'README.md';
+      final analysisOptions = 'analysis_options.yaml';
+      final metadata = '.metadata';
+      final utils = 'utils';
+      final test = 'test';
+      final lib = 'lib';
+      final macos = 'macos';
+      final windows = 'windows';
+      final linux = 'linux';
+      final web = 'web';
+
+      final pathList = [
+        androidPath,
+        iosPath,
+        integrationTest,
+        pubspecLock,
+        pubspecYaml,
+        readme,
+        analysisOptions,
+        // metadata,
+        utils,
+        test,
+        macos,
+        windows,
+        linux,
+        web,
+        lib,
+      ];
+      if (!exists('output')) {
+        createDir(outputPath, recursive: true);
+      }
+      for (final path in pathList) {
+        if (!exists(
+          '$outputPath/$path',
+        )) {
+          if (isDirectory('$basePath/$path')) {
+            createDir('$outputPath/$path', recursive: true);
+            print('created $path');
+          } else {
+            print('$path is not dir');
+          }
+        } else {
+          print('$path already exist');
+        }
+        if (isFile(path)) {
+          move(
+            '$basePath/$path',
+            '$outputPath/$path',
+            overwrite: true,
+          );
+          print('$path file moved');
+        } else {
+          moveTree(
+            '$basePath/$path',
+            '$outputPath/$path',
+            overwrite: true,
+          );
+          print('$path dir moved');
+        }
+      }
+      deleteDir('tempPath');
     } else {
       print('Request failed with status: ${response.statusCode}.');
     }

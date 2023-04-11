@@ -2,36 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/Blog-app-" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/Calculator" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/Calculator-state-notifier" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/Chat" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/Collection-Programs" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/CustomPainter-Login-Page" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/Navigation-app" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/Stream" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/Training" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/Web-App" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/amplifysample" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/api" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/arithmatic-app" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/barcode-scanner" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/chatapp" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/code_generators" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/collection" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/components" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/counter-using-provider" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/custom-platform-channel" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/drift-sql" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/flutter-draggable" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/flutter-flavor" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/flutter-flow" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/geolocation" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/movie" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/navigation-web" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/random-color" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/richardnovasnw.github.io" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/rive-app" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/output/shopping" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tempPath/flutter_template" vcs="Git" />
   </component>
 </project>
